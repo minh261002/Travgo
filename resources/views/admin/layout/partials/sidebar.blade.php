@@ -11,8 +11,8 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark p-2">
             <a href="{{ route('admin.dashboard') }}">
-                <img src="https://res.cloudinary.com/doy3slx9i/image/upload/v1735367386/Pengu/logo_vk3mee.svg"
-                    alt="Logo" class="navbar-brand-image" style="height:2.5em">
+                <img src="{{ asset('admin/images/logo.webp') }}" alt="Logo" class="navbar-brand-image"
+                    style="height:2em">
             </a>
         </h1>
 
@@ -70,8 +70,7 @@
                                     <div class="dropdown-menu {{ setSidebarShow($menu['show']) }}">
                                         <div class="dropdown-menu-columns">
                                             @foreach ($menu['children'] as $child)
-                                                @if (isset($child['permission']) &&
-                                                        !auth()->guard('admin')->user()->can($child['permission']))
+                                                @if (isset($child['permission']) && !auth()->guard('admin')->user()->can($child['permission']))
                                                     @continue
                                                 @endif
                                                 <a class="dropdown-item" href="{{ route($child['route']) }}">

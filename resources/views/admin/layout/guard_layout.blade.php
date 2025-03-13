@@ -41,8 +41,7 @@
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
                 <a href="{{ route('admin.login') }}" class="navbar-brand navbar-brand-autodark">
-                    <img src="https://res.cloudinary.com/doy3slx9i/image/upload/v1735367386/Pengu/logo_vk3mee.svg"
-                        class="">
+                    <img src="{{ asset('admin/images/logo.webp') }}" width="250">
                 </a>
             </div>
             <div class="card card-md">
