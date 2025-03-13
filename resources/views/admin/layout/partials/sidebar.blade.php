@@ -11,8 +11,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark p-2">
             <a href="{{ route('admin.dashboard') }}">
-                <img src="{{ asset('admin/images/logo.svg') }}" alt="Logo" class="navbar-brand-image"
-                    style="height:2em">
+                <img src="{{ asset('admin/images/logo.webp') }}" alt="Logo" class="navbar-brand-image">
             </a>
         </h1>
 

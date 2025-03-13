@@ -11,6 +11,11 @@ class ServiceProviderRepository extends ServiceProvider
         'App\Repositories\Module\ModuleRepositoryInterface' => 'App\Repositories\Module\ModuleRepository',
         'App\Repositories\Permission\PermissionRepositoryInterface' => 'App\Repositories\Permission\PermissionRepository',
         'App\Repositories\Role\RoleRepositoryInterface' => 'App\Repositories\Role\RoleRepository',
+        'App\Repositories\Admin\AdminRepositoryInterface' => 'App\Repositories\Admin\AdminRepository',
+        'App\Repositories\Slider\SliderItemRepositoryInterface' => 'App\Repositories\Slider\SliderItemRepository',
+        'App\Repositories\Slider\SliderRepositoryInterface' => 'App\Repositories\Slider\SliderRepository',
+        'App\Repositories\User\UserRepositoryInterface' => 'App\Repositories\User\UserRepository',
+
 
     ];
 
