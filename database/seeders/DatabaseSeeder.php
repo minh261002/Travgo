@@ -20,5 +20,9 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'image' => '/admin/images/not-found.jpg'
         ]);
+
+        $this->call([
+            ModuleSeeder::class
+        ]);
     }
 }
