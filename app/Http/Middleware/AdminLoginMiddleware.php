@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class LoginMiddleware
+class AdminLoginMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,8 @@ class LoginMiddleware
 
     public function handle(Request $request, Closure $next, ...$guards): Response
     {
-        if (Auth::guard('web')->check()) {
-            return redirect()->route('home');
+        if (Auth::guard('admin')->check()) {
+            return redirect()->route('admin.dashboard');
         }
         return $next($request);
     }
