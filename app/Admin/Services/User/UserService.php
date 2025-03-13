@@ -36,7 +36,7 @@ class UserService implements UserServiceInterface
         $data = $request->validated();
         $data['image'] = $data['image'] ?? '/admin/images/not-found.jpg';
 
-        if ($data['password']) {
+        if (!empty($data['password'])) {
             $data['password'] = Hash::make($data['password']);
         } else {
             unset($data['password']);
