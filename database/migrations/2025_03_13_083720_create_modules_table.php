@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->string('name');
             $table->longText('description')->nullable();
             $table->enum('status', ModuleStatus::getValues())->default(ModuleStatus::InProgress->value);
-            $table->softDeletes();
             $table->timestamps();
         });
     }

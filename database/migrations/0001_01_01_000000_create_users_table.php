@@ -30,7 +30,6 @@ return new class extends Migration {
             $table->enum('role', UserRole::getValues())->default(UserRole::User->value);
             $table->enum('login_type', UserLoginType::getValues())->default(UserLoginType::Email->value);
             $table->rememberToken();
-            $table->softDeletes();
             $table->timestamps();
         });
 
