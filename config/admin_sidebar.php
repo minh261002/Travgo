@@ -1,7 +1,27 @@
 <?php
 
 return [
-
+    [
+        'active' => ['admin.category.*'],
+        'show' => ['admin.category.*'],
+        'title' => 'Danh mục',
+        'icon' => 'ti ti-list-letters fs-2',
+        'permission' => ['viewCategory', 'createCategory', 'editCategory', 'deleteCategory'],
+        'children' => [
+            [
+                'title' => 'Thêm mới',
+                'route' => 'admin.category.create',
+                'icon' => 'ti ti-plus fs-3 me-2',
+                'permission' => 'createCategory'
+            ],
+            [
+                'title' => 'Danh sách',
+                'route' => 'admin.category.index',
+                'icon' => 'ti ti-list fs-3 me-2',
+                'permission' => 'viewCategory'
+            ]
+        ]
+    ],
     [
         'active' => ['admin.post_catalogue.*'],
         'show' => ['admin.post_catalogue.*'],

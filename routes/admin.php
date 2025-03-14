@@ -1,5 +1,6 @@
 <?php
 
+use App\Admin\Http\Controllers\Category\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Admin\Http\Controllers\Auth\AuthController;
 use App\Admin\Http\Controllers\Dashboard\DashboardController;
@@ -216,6 +217,29 @@ Route::prefix('admin')->as('admin.')->group(function () {
         Route::middleware(['permission:editSlider'])->group(function () {
             Route::get('slider-item/edit/{id}', [SliderController::class, 'editItem'])->name('slider.item.edit');
             Route::put('slider-item/update', [SliderController::class, 'updateItem'])->name('slider.item.update');
+        });
+
+        //Category
+        Route::prefix('category')->as('category.')->group(function () {
+            Route::middleware(['permission:viewCategory'])->group(function () {
+                Route::get('/', [CategoryController::class, 'index'])->name('index');
+                Route::get('/get', [CategoryController::class, 'get'])->name('get');
+            });
+
+            Route::middleware(['permission:createCategory'])->group(function () {
+                Route::get('/create', [CategoryController::class, 'create'])->name('create');
+                Route::post('/store', [CategoryController::class, 'store'])->name('store');
+            });
+
+            Route::middleware(['permission:editCategory'])->group(function () {
+                Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('edit');
+                Route::put('/update', [CategoryController::class, 'update'])->name('update');
+                Route::patch('/update-status', [CategoryController::class, 'updateStatus'])->name('update.status');
+            });
+
+            Route::middleware(['permission:deleteCategory'])->group(function () {
+                Route::delete('/delete/{id}', [CategoryController::class, 'delete'])->name('delete');
+            });
         });
     });
 });
