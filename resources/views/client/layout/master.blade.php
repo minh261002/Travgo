@@ -54,6 +54,8 @@
 
     <div class="page">
         @include('client.layout.partials.header-top')
+
+        @yield('content')
     </div>
 
 
