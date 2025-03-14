@@ -44,7 +44,6 @@ class User extends Authenticatable
             'password' => 'hashed',
             'status' => ActiveStatus::class,
             'login_type' => UserLoginType::class,
-            'role' => UserRole::class
         ];
     }
 }

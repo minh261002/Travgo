@@ -2,7 +2,6 @@
 
 use App\Enums\ActiveStatus;
 use App\Enums\User\UserLoginType;
-use App\Enums\User\UserRole;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -27,7 +26,6 @@ return new class extends Migration {
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->enum('status', ActiveStatus::getValues())->default(ActiveStatus::Active->value);
-            $table->enum('role', UserRole::getValues())->default(UserRole::User->value);
             $table->enum('login_type', UserLoginType::getValues())->default(UserLoginType::Email->value);
             $table->rememberToken();
             $table->timestamps();
