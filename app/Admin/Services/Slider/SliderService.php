@@ -17,6 +17,7 @@ class SliderService implements SliderServiceInterface
     public function store(Request $request)
     {
         $data = $request->validated();
+        // dd($data);
         return $this->sliderRepository->create($data);
     }
 
