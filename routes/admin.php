@@ -8,7 +8,7 @@ use App\Admin\Http\Controllers\Permission\PermissionController;
 use App\Admin\Http\Controllers\Role\RoleController;
 use App\Admin\Http\Controllers\Admin\AdminController;
 use App\Admin\Http\Controllers\User\UserController;
-use App\Admin\Http\Controllers\PostCatalogue\PostCatalogueController;
+use App\Admin\Http\Controllers\Post\PostCatalogueController;
 use App\Admin\Http\Controllers\Post\PostController;
 use App\Admin\Http\Controllers\Slider\SliderController;
 
